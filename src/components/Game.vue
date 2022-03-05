@@ -1,5 +1,6 @@
 <template>
   <div class="game">
+    <Help />
     <Scores/>
     <Board/>
     <Message/>
@@ -19,15 +20,17 @@ import {mapGetters, mapActions} from 'vuex'
 import Board from './Board'
 import Message from './Message'
 import Scores from './Scores'
+import Help from './Help'
 import IButton from './ui/IButton'
 
 export default {
   name: "Game",
   components: {
     Board,
-    Scores,
-    Message,
+    Help,
     IButton,
+    Message,
+    Scores,
   },
   watch: {
     cells: {
@@ -116,6 +119,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 </style>
