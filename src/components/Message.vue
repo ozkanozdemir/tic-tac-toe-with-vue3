@@ -1,32 +1,44 @@
 <template>
-  <div v-show="message"
+  <div v-if="message"
        class="message"
-       :class="{'bg-danger': (status === 'danger'), 'bg-success': (status === 'success')}">
+       :class="{'bg-danger': (messageStatus === 'danger'), 'bg-success': (messageStatus === 'success')}">
     {{ message }}
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Message",
-  props: ['message', 'status']
+  computed: {
+    ...mapGetters([
+        'message',
+        'messageStatus'
+    ])
+  }
 }
 </script>
 
 <style scoped>
   .message {
-    width: 360px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    position: fixed;
     padding: 16px;
-    margin: 18px 0;
-    font-size: 20px;
+    font-size: 24px;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
     color: whitesmoke;
+    line-height: 42px;
   }
   .bg-danger {
     background-color: #FF1731;
   }
   .bg-success {
-    background-color: #3f7908;
+    background-color: #529a08;
   }
 </style>

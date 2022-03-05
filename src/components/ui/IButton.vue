@@ -1,9 +1,7 @@
 <template>
-  <main>
-    <button>
-      <slot></slot>
-    </button>
-  </main>
+  <button>
+    <slot></slot>
+  </button>
 </template>
 
 <script>
@@ -12,15 +10,13 @@ export default {
 }
 </script>
 
-<style scoped>
-
-main {
+<style>
+.button-container {
   display: flex;
   flex-direction: column;
   transform: rotatex(10deg);
   animation: rotateAngle 4s linear infinite;
 }
-
 button {
   font-family: 'Josefin Sans', sans-serif;
   display: block;

@@ -1,18 +1,28 @@
 <template>
   <div class="scores">
-    <span :style="{color: sign === signX ? 'darkgreen' : '' }">
+    <span :class="{active: sign === signX}">
       X score : {{ xScore }}
     </span>
-    <span :style="{color: sign === signO ? 'darkgreen' : '' }">
+    <span :class="{active: sign === signO}">
       O Score : {{ oScore }}
     </span>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Scores",
-  props: ['xScore', 'oScore', 'sign', 'signX', 'signO']
+  computed: {
+    ...mapGetters([
+        'xScore',
+        'oScore',
+        'sign',
+        'signX',
+        'signO',
+    ])
+  }
 }
 </script>
 
@@ -23,7 +33,13 @@ export default {
     width: 360px;
     padding: 12px;
     background-color: whitesmoke;
-    margin-bottom: 12px;
-    font-size: 20px;
+    margin-bottom: 22px;
+    font-size: 22px;
+    border-radius: 6px;
+  }
+  .scores .active {
+    cursor: default;
+    color: #0e980e;
+    font-weight: bold;
   }
 </style>
