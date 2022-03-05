@@ -26,3 +26,9 @@ npm run lint
 
 ### UI Components
 Button : [Codepen - CSS 3D Blend Mode Buttons](https://codepen.io/lisilinhart/pen/OJRoRJe).
+
+### TODO
+
+- Add TailwindCSS (responsive)
+- Add WebRtc - Peer to Peer - Online Play
+- Add play with AI
