@@ -34,7 +34,7 @@ const store = createStore({
 		crossClass : state => {
 			const winningOrder = state.winningOrder;
 			if (winningOrder && winningOrder.length > 0) {
-				state.setCrossClass = {
+				return {
 					'cross-line-012': winningOrder.every(w => [0, 1, 2].includes(w)),
 					'cross-line-345': winningOrder.every(w => [3, 4, 5].includes(w)),
 					'cross-line-678': winningOrder.every(w => [6, 7, 8].includes(w)),
@@ -45,6 +45,7 @@ const store = createStore({
 					'cross-line-246': winningOrder.every(w => [2, 4, 6].includes(w)),
 				}
 			}
+			return {}
 		},
 		finished : state => state.finished,
 		message : state => state.message,
@@ -100,6 +101,7 @@ const store = createStore({
 			state.sign = payload
 		},
 		setWinningOrder(state, payload) {
+			console.log('2', payload)
 			state.winningOrder = payload
 		},
 		startGame(state) {

@@ -82,8 +82,8 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 480px;
-  height: 480px;
+  width: 420px;
+  height: 420px;
   overflow: hidden;
   position: relative;
 }
@@ -91,14 +91,14 @@ export default {
 .cell {
   position: relative;
   font-family: 'Gochi Hand', cursive;
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   outline: 1px solid whitesmoke;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 140px;
+  font-size: 130px;
   color: whitesmoke;
 }
 
@@ -134,7 +134,7 @@ export default {
 }
 
 .cross-line-036 {
-  background: linear-gradient(to left, rgba(0, 0, 0, 0) calc(16% - 4px), lime, rgba(0, 0, 0, 0) calc(16% + 4px))
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) calc(16% - 4px), lime, rgba(0, 0, 0, 0) calc(16% + 4px))
 }
 
 .cross-line-147 {
@@ -142,7 +142,7 @@ export default {
 }
 
 .cross-line-258 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) calc(16% - 4px), lime, rgba(0, 0, 0, 0) calc(16% + 4px))
+  background: linear-gradient(to left, rgba(0, 0, 0, 0) calc(16% - 4px), lime, rgba(0, 0, 0, 0) calc(16% + 4px))
 }
 
 .cross-line-048 {
