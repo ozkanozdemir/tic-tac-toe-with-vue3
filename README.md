@@ -1,5 +1,9 @@
 # tic-tac-toe-with-vue-3
 
+[See Demo](https://ozkanozdemir.github.io/tic-tac-toe-with-vue3/)
+
+![Screen Shot](https://ozkanozdemir.github.io/tic-tac-toe-with-vue3/ss.png)
+
 ## Project setup
 ```
 npm install
