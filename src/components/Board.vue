@@ -40,12 +40,17 @@ export default {
     ]),
     cellClicked(order) {
       if (this.started && !this.finished && !this.processing) {
+        // current cell of entered order
         const currentCell = this.cells.find(c => c.order === order)
 
+        // if current cell exist, don't anything
         if (!currentCell) {
           this.processing = true;
 
+          // add cell to cell - store
           this.addCell({order: order, sign: this.sign})
+
+          // change sign
           this.setSign(this.sign === this.signX ? this.signO : this.signX)
 
           setTimeout(() => {
@@ -55,6 +60,7 @@ export default {
       }
     },
     getCellSign(order) {
+      // find the cell
       const cell = this.cells.find(c => c.order === order)
 
       if (!cell) {
@@ -65,6 +71,7 @@ export default {
     },
   },
   mounted() {
+    // listen keydown and click cell
     document.addEventListener('keydown', e => {
       const number = parseInt(e.key);
       if (number > 0 && number < 10) {

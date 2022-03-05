@@ -96,7 +96,6 @@ export default {
       return this.winningOrders.some(w => {
         const result = w.every(value => orders.includes(value))
         if (result) {
-          console.log('1', w)
           this.setWinningOrder(w)
         }
         return result
@@ -104,6 +103,7 @@ export default {
     },
   },
   mounted() {
+    // listen keydown for start game and reset scores
     document.addEventListener('keydown', e => {
       if (e.key === 'r') {
         this.resetScores()
