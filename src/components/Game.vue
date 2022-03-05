@@ -1,6 +1,6 @@
 <template>
   <div class="game">
-    <Scores :xScore="xScore" :oScore="oScore" />
+    <Scores :xScore="xScore" :oScore="oScore" :sign="sign" :signX="signX" :signO="signO" />
     <Board :crossClass="crossClass" />
     <Message :message="message" :status="status" />
     <IButton v-if="!started || finished" @click="startGame" class="start-button">
@@ -62,11 +62,13 @@ export default {
           this.message = 'X Won'
           this.status = 'success'
           this.finished = true
+          this.sign = this.signX
           this.xScore++
         } else if (this.winnerControl(signedOOrders)) {
           this.message = 'O Won'
           this.status = 'success'
           this.finished = true
+          this.sign = this.signO
           this.oScore++
         } else {
           // Game over

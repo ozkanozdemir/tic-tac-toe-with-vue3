@@ -1,9 +1,9 @@
 <template>
   <div class="scores">
-    <span>
+    <span :style="{color: sign === signX ? 'darkgreen' : '' }">
       X score : {{ xScore }}
     </span>
-    <span>
+    <span :style="{color: sign === signO ? 'darkgreen' : '' }">
       O Score : {{ oScore }}
     </span>
   </div>
@@ -12,7 +12,7 @@
 <script>
 export default {
   name: "Scores",
-  props: ['xScore', 'oScore']
+  props: ['xScore', 'oScore', 'sign', 'signX', 'signO']
 }
 </script>
 
